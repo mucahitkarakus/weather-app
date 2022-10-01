@@ -14,7 +14,7 @@ function App() {
   const getInfo = () => {
     axios.get(URL).then((res) => {
       console.log(res)
-    })
+    }).catch((ERR) => console.error(ERR))
   };
   return (
     <div>
