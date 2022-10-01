@@ -1,4 +1,5 @@
 import React from "react";
+import {WeatherDetails} from "./index";
 
 const WeatherData = ({weatherData}) => {
   const iconUrlCode = (code) =>
@@ -24,8 +25,29 @@ const WeatherData = ({weatherData}) => {
             <p>{(((weatherData.main.temp - 32) * 5) / 9).toFixed(0)}°</p>
             <div className="flex flex-col items-center mt-2 gap-[.2rem]">
               {/* */}
-
+              <WeatherDetails
+                title="Real fell"
+                data={(((weatherData.main.temp - 32) * 5) / 9).toFixed(0)}
+                unit="°"
+              />
+              <WeatherDetails
+                title="Humudity"
+                data={weatherData.main.humidity}
+                unit="%"
+              />
+              <WeatherDetails
+                title="Wind"
+                data={weatherData.wind.speed}
+                unit=" km/h"
+              />
               {/* */}
+            </div>
+            <div>
+              <WeatherDetails
+                title="Wind"
+                data={weatherData.wind.speed}
+                unit=" km/h"
+              />
             </div>
           </div>
         </div>
